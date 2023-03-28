@@ -5,5 +5,5 @@
 
 <h5>Tech Stack<h5>
 
-<strong>MERN</strong> Stack <br />
+<strong>MERN</strong> Stack <br /><br />
 `React` <br /> `Node.js` <br /> `MongoDB` <br /> `Express.js`
