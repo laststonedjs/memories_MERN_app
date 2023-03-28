@@ -5,4 +5,5 @@
 
 <h5>Tech Stack<h5>
 
-MERN Stack (React, Node.js, MongoDB, Express.js)
+MERN Stack <br />
+`React <br /> Node.js <br /> MongoDB <br /> Express.js`
