@@ -7,3 +7,7 @@
 
 <strong>MERN</strong> Stack <br /><br />
 `React` <br /> `Node.js` <br /> `MongoDB` <br /> `Express.js`
+
+<h5>Screenshots</h5>
+
+![memories](https://user-images.githubusercontent.com/58791451/228823442-bb0f2c05-4274-45a1-8b35-5d30ff8ea944.png)
