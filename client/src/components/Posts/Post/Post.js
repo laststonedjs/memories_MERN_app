@@ -1,4 +1,7 @@
 import React from "react";
+// redux
+import { useDispatch } from "react-redux";
+import { deletePost, likePost } from "../../../actions/posts";
 // material ui
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from "@material-ui/core";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
@@ -11,6 +14,7 @@ import moment from "moment";
 
 const Post = ({ post, setCurrentId }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   return (
     <Card className={classes.card}>
@@ -25,25 +29,25 @@ const Post = ({ post, setCurrentId }) => {
           size="small"
           onClick={() => setCurrentId(post._id)}
         >
-          <MoreHorizIcon fontSize="default" />
+          <MoreHorizIcon fontSize="medium" />
         </Button>
       </div>
       <div className={classes.details}>
-        <Typography variant="body" color="text-secondary">{post.tags.map((tag) => `# ${tag} `)}</Typography>
+        <Typography variant="body" color="textSecondary">{post.tags.map((tag) => `# ${tag} `)}</Typography>
       </div>
       <Typography className={classes.title} variant="h5" gutterBottom>{post.title}</Typography>
       <CardContent>
-        <Typography variant="h5" gutterBottom>{post.message}</Typography>
+        <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>
-        <Button size="small" color="primary" onClick={() => { }}>
+        <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))}>
           <ThumbUpAltIcon fontSize="small" />
-          Like
+          &nbsp; Like &nbsp;
           {post.likeCount}
         </Button>
-        <Button size="small" color="primary" onClick={() => { }}>
+        <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))}>
           <DeleteIcon fontSize="small" />
-          Delete
+          &nbsp;Delete
         </Button>
       </CardActions>
     </Card>
